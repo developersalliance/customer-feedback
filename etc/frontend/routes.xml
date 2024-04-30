@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+    Routing Configuration for Customer Feedback
+    Author: Developers-Alliance team
+    Copyright: Copyright (c) 2024 Developers-alliance (https://www.developers-alliance.com)
+    Website: https://developers-alliance.com
+    Package: Devall_CustomerFeedback
+    Version: 1.0.0
+
+    This file defines the frontend routing for the Customer Feedback module in Magento.
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="standard">
+        <route id="feedback" frontName="feedback">
+            <module name="Devall_CustomerFeedback" />
+        </route>
+    </router>
+</config>

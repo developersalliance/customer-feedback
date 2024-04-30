@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Layout Configuration for Customer Feedback Form
+    Author: Developers-Alliance team
+    Copyright: Copyright (c) 2024 Developers-alliance (https://www.developers-alliance.com)
+    Website: https://developers-alliance.com
+    Package: Devall_CustomerFeedback
+    Version: 1.0.0
+
+    This file adds a custom feedback form to the product details page on the frontend. It is shown as a tab within the "Product Information" section, subject to the module's configuration. This layout adjustment enables customers to submit feedback directly from the product page, enhancing user engagement and providing valuable insights to the store owner.
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="product.info.details">
+            <block class="Magento\Catalog\Block\Product\View"
+                   name="feedback_form.tab"
+                   template="Devall_CustomerFeedback::feedbackform.phtml"
+                   ifconfig="devall_feedback/settings/enabled"
+                   group="detailed_info">
+                <arguments>
+                    <argument translate="true" name="title" xsi:type="string">Feedback</argument>
+                    <argument name="sort_order" xsi:type="string">20</argument>
+                    <argument name="jsLayout" xsi:type="array">
+                        <item name="components" xsi:type="array">
+                            <item name="feedbackComponent" xsi:type="array">
+                                <item name="component" xsi:type="string">Devall_CustomerFeedback/js/feedback-component</item>
+                                <item name="config" xsi:type="array">
+                                    <item name="template" xsi:type="string">Devall_CustomerFeedback/feedback-form</item>
+                                </item>
+                            </item>
+                        </item>
+                    </argument>
+                    <argument name="viewModel" xsi:type="object">Devall\CustomerFeedback\ViewModel\FeedbackFormViewModel</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

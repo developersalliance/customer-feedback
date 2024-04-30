@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+    DB for Customer Feedback
+    Author: Developers-Alliance team
+    Copyright: Copyright (c) 2024 Developers-alliance (https://www.developers-alliance.com)
+    Website: https://developers-alliance.com
+    Package: Devall_CustomerFeedback
+    Version: 1.0.0
+
+    This file sets the default configuration values for the Customer Feedback module.
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="customer_feedback" resource="default" engine="innodb" comment="Customer Feedback Table">
+        <column xsi:type="int" name="id" padding="10" unsigned="true" nullable="false" identity="true" comment="Entity Id"/>
+        <column xsi:type="int" name="product_id" padding="10" unsigned="true" nullable="false" comment="Product Id"/>
+        <column xsi:type="varchar" name="firstname" nullable="true" length="255" comment="First Name"/>
+        <column xsi:type="varchar" name="lastname" nullable="true" length="255" comment="Last Name"/>
+        <column xsi:type="varchar" name="email" nullable="true" length="255" comment="Email"/>
+        <column xsi:type="varchar" name="title" nullable="false" length="255" comment="Title"/>
+        <column xsi:type="text" name="feedback" nullable="false" comment="Content"/>
+        <column xsi:type="timestamp" name="date_created" nullable="false" default="CURRENT_TIMESTAMP" comment="Creation Time"/>
+        <column xsi:type="boolean" name="anonymous" nullable="false" default="0" comment="Is Anonymous"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+    </table>
+</schema>

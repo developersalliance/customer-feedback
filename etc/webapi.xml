@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+    Web API Routes Configuration for Devall Customer Feedback
+    Author: Developers-Alliance team
+    Copyright: Copyright (c) 2024 Developers-alliance (https://www.developers-alliance.com)
+    Website: https://developers-alliance.com
+    Package: Devall_CustomerFeedback
+    Version: 1.0.0
+
+    This file defines the API routes for the Customer Feedback module.
+    It specifies the URL path, method, and service for feedback submission.
+-->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/feedback/submit" method="POST">
+        <service class="Devall\CustomerFeedback\Api\FeedbackManagementInterface" method="submitFeedback"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+    </route>
+</routes>

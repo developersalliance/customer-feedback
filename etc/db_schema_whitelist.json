@@ -1,0 +1,18 @@
+{
+    "customer_feedback": {
+        "column": {
+            "id": true,
+            "product_id": true,
+            "title": true,
+            "feedback": true,
+            "date_created": true,
+            "anonymous": true,
+            "firstname": true,
+            "lastname": true,
+            "email": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

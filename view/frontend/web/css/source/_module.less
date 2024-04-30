@@ -1,0 +1,88 @@
+@feedback-form-bg-color: #ffffff;
+@feedback-form-border-color: #dcdcdc;
+@feedback-primary-color: #0071a1;
+@feedback-primary-hover-color: #005b80;
+@feedback-text-color: #333333;
+
+.catalog-product-view {
+    #feedback-section {
+        margin-bottom: 20px;
+
+        .feedback-form {
+            width: 60%;
+            margin: 0 auto;
+            padding: 30px;
+            background: linear-gradient(to bottom, #ffffff, #f9f9f9);
+            border: 1px solid @feedback-form-border-color;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+
+            .feedback-field {
+                margin-bottom: 20px;
+
+                .feedback-label {
+                    font-weight: bold;
+                    margin-bottom: 10px;
+                }
+
+                .feedback-control {
+                    input[type="text"],
+                    textarea {
+                        width: 100%;
+                        padding: 12px;
+                        border: 1px solid #dcdcdc;
+                        border-radius: 6px;
+                        transition: border-color 0.3s ease;
+
+                        &:focus {
+                            border-color: @feedback-primary-color;
+                            outline: none;
+                        }
+                    }
+                }
+            }
+
+            .feedback-actions-toolbar {
+                text-align: center;
+
+                .feedback-primary-button {
+                    padding: 14px 24px;
+                    background-color: @feedback-primary-color;
+                    color: #ffffff;
+                    border: none;
+                    border-radius: 6px;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+                    &:hover {
+                        background-color: @feedback-primary-hover-color;
+                    }
+                }
+            }
+        }
+
+        .feedback-intro-text {
+            font-size: 1.4rem;
+            font-weight: bold;
+            line-height: 1.4;
+            color: @feedback-text-color;
+            margin-bottom: 20px;
+        }
+
+        .feedback-toggle-button {
+            padding: 14px 24px;
+            background-color: @feedback-primary-color;
+            color: #ffffff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background-color: @feedback-primary-hover-color;
+            }
+        }
+    }
+}

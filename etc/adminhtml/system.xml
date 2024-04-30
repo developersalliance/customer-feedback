@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!--
+    System Configuration for Customer Feedback
+    Author: Developers-Alliance team
+    Copyright: Copyright (c) 2024 Developers-alliance (https://www.developers-alliance.com)
+    Website: https://developers-alliance.com
+    Package: Devall_CustomerFeedback
+    Version: 1.0.0
+
+    This file defines the system configuration options for the Customer Feedback module in Magento.
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="devall_feedback" translate="label" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Customer Feedback</label>
+            <tab>devall</tab>
+            <resource>Devall_CustomerFeedback::feedback_main</resource>
+            <group id="settings" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Settings</label>
+                <field id="enabled" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="enabled_email" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Email Notification</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="recipient_email" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Recipient Email</label>
+                    <comment>Email address that will receive feedback notifications.</comment>
+                    <depends>
+                        <field id="enabled_email">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

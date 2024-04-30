@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+    Module Configuration for Devall Customer Feedback
+    Author: Developers-Alliance team
+    Copyright: Copyright (c) 2024 Developers-alliance (https://www.developers-alliance.com)
+    Website: https://developers-alliance.com
+    Package: Devall_CustomerFeedback
+    Version: 1.0.0
+
+    This file declares the Customer Feedback module and its dependencies.
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="Devall_CustomerFeedback" setup_version="1.0.0" >
+        <sequence>
+            <module name="Magento_Catalog"/>
+            <module name="Magento_Backend" />
+            <module name="Magento_Ui" />
+            <module name="DevAll_Base"/>
+        </sequence>
+    </module>
+</config>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    UI Component Listing Configuration for Customer Feedback
+    Author: Developers-Alliance team
+    Copyright: Copyright (c) 2024 Developers-alliance (https://www.developers-alliance.com)
+    Website: https://developers-alliance.com
+    Package: Devall_CustomerFeedback
+    Version: 1.0.0
+
+    This file configures the UI Component for the Customer Feedback listing in the Magento Admin. It includes configurations for the data source, columns, filters, and actions. Each section of the listing is clearly defined, from the data source to the individual columns and the toolbar.
+-->
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">customerfeedback_feedback_listing.customerfeedback_feedback_listing_data_source</item>
+        </item>
+    </argument>
+    <settings>
+        <spinner>customerfeedback_feedback_columns</spinner>
+        <deps>
+            <dep>customerfeedback_feedback_listing.customerfeedback_feedback_listing_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="customerfeedback_feedback_listing_data_source" component="Magento_Ui/js/grid/provider">
+        <settings>
+            <storageConfig>
+                <param name="indexField" xsi:type="string">id</param>
+            </storageConfig>
+            <updateUrl path="mui/index/render"/>
+        </settings>
+        <dataProvider name="customerfeedback_feedback_listing_data_source" class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <listingToolbar name="listing_top">
+        <settings>
+            <sticky>true</sticky>
+        </settings>
+        <bookmark name="bookmarks"/>
+        <columnsControls name="columns_controls"/>
+        <filters name="listing_filters"/>
+        <paging name="listing_paging" />
+        <massaction name="listing_massaction">
+            <action name="delete">
+                <settings>
+                    <url path="customerfeedback/feedback/massDelete"/>
+                    <type>delete</type>
+                    <label translate="true">Delete</label>
+                    <confirm>
+                        <title translate="true">Delete</title>
+                        <message translate="true">Are you sure you want to delete the selected feedback(s)?</message>
+                    </confirm>
+                </settings>
+            </action>
+        </massaction>
+    </listingToolbar>
+    <columns name="customerfeedback_feedback_columns">
+        <selectionsColumn name="ids">
+            <settings>
+                <indexField>id</indexField>
+                <resizeEnabled>false</resizeEnabled>
+                <resizeDefaultWidth>55</resizeDefaultWidth>
+            </settings>
+        </selectionsColumn>
+        <!-- ID -->
+        <column name="id" sortOrder="10">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">ID</label>
+                <sorting>asc</sorting>
+            </settings>
+        </column>
+        <!-- Product ID -->
+        <column name="product_id" sortOrder="20">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">Product ID</label>
+            </settings>
+        </column>
+        <column name="firstname" sortOrder="30">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">First Name</label>
+            </settings>
+        </column>
+        <!-- User Last Name -->
+        <column name="lastname" sortOrder="40">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Last Name</label>
+            </settings>
+        </column>
+        <!-- User Email -->
+        <column name="email" sortOrder="50">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Email</label>
+            </settings>
+        </column>
+        <!-- Title -->
+        <column name="title" sortOrder="60">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Title</label>
+            </settings>
+        </column>
+        <!-- Feedback -->
+        <column name="feedback" sortOrder="70">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Feedback</label>
+            </settings>
+        </column>
+        <!-- Date Created -->
+        <column name="date_created" component="Magento_Ui/js/grid/columns/date" sortOrder="90">
+            <settings>
+                <filter>dateRange</filter>
+                <dataType>date</dataType>
+                <label translate="true">Date Created</label>
+            </settings>
+        </column>
+        <!-- Anonymous -->
+        <column name="anonymous" sortOrder="80">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">Magento\Config\Model\Config\Source\Yesno</item>
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">select</item>
+                    <item name="label" translate="true" xsi:type="string">Anonymous?</item>
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/select</item>
+                    <item name="dataType" xsi:type="string">select</item>
+                </item>
+            </argument>
+        </column>
+        <actionsColumn name="actions" class="Devall\CustomerFeedback\Ui\Component\Listing\Column\Actions">
+            <settings>
+                <indexField>id</indexField>
+            </settings>
+        </actionsColumn>
+    </columns>
+</listing>

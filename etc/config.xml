@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+    Default Configuration for Customer Feedback
+    Author: Developers-Alliance team
+    Copyright: Copyright (c) 2024 Developers-alliance (https://www.developers-alliance.com)
+    Website: https://developers-alliance.com
+    Package: Devall_CustomerFeedback
+    Version: 1.0.0
+
+    This file sets the default configuration values for the Customer Feedback module.
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <devall_feedback>
+            <settings>
+                <enabled>1</enabled>
+                <enabled_email>0</enabled_email>
+                <recipient_email></recipient_email>
+            </settings>
+        </devall_feedback>
+    </default>
+</config>

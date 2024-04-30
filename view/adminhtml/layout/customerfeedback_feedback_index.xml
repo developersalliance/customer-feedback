@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+    Layout Configuration for Customer Feedback Grid in Admin
+    Author: Developers-Alliance team
+    Copyright: Copyright (c) 2024 Developers-alliance (https://www.developers-alliance.com)
+    Website: https://developers-alliance.com
+    Package: Devall_CustomerFeedback
+    Version: 1.0.0
+
+    This layout file is responsible for adding the Customer Feedback grid to the admin panel. It defines the structure and components used in the Customer Feedback section of the Magento Admin. This includes the main content grid and a custom footer block.
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="styles"/>
+    <body>
+        <referenceContainer name="content">
+            <uiComponent name="customerfeedback_feedback_listing"/>
+        </referenceContainer>
+        <referenceContainer name="footer">
+            <block class="Magento\Framework\View\Element\Template" name="custom.footer.template" template="Devall_CustomerFeedback::customerfeedback/footer.phtml" />
+        </referenceContainer>
+    </body>
+</page>

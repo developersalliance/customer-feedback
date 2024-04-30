@@ -1,0 +1,55 @@
+<!--
+Customer Feedback Form
+
+This section includes the introductory text for the feedback form, the toggle button to show/hide the form, and the form itself.
+The form allows customers to submit their feedback on products, suggestions for improvement, or other insights. It supports submitting feedback anonymously.
+The visibility of the form and submission handling are managed via KnockoutJS bindings.
+
+Author: Developers-Alliance team
+Copyright: Copyright (c) 2024 Developers-alliance (https://www.developers-alliance.com)
+Website: https://developers-alliance.com
+Package: Devall_CustomerFeedback
+Version: 1.0.0
+-->
+<div class="feedback-intro-text">
+    <p>Share your thoughts with us! Submit your feedback on our products, suggestions for improvement, or any other insights directly to the store owner using this form.</p>
+</div>
+<!-- The Toggle Button -->
+<button data-bind="click: toggleForm, text: isFormVisible() ? 'Hide Feedback Form' : 'Show Feedback Form'" class="feedback-toggle-button"></button>
+<!-- Feedback Form -->
+<div data-bind="visible: isFormVisible" class="feedback-form-container">
+    <form data-bind="submit: submitFeedback" class="feedback-form">
+
+        <div class="feedback-field feedback-field-required">
+            <label for="feedback-title" class="feedback-label"><span>Title</span></label>
+            <div class="feedback-control">
+                <input type="text" name="title" id="feedback-title" data-bind="value: title" placeholder="Enter the title" class="feedback-input-text" />
+            </div>
+        </div>
+
+        <div class="feedback-field feedback-field-required">
+            <label for="feedback-content" class="feedback-label"><span>Feedback</span></label>
+            <div class="feedback-control">
+                <textarea name="feedback" id="feedback-content" data-bind="value: feedback" placeholder="Enter your feedback" class="feedback-textarea"></textarea>
+            </div>
+        </div>
+
+        <div class="feedback-field feedback-field-checkbox">
+            <div class="feedback-control">
+                <input type="checkbox" name="submitAnonymously" id="submit-anonymously" data-bind="checked: submitAnonymously" class="feedback-checkbox" />
+                <label for="submit-anonymously" class="feedback-label-checkbox">Submit Anonymously</label>
+            </div>
+        </div>
+
+        <input type="hidden" name="product_id" data-bind="value: productId" />
+
+        <div class="feedback-actions-toolbar">
+            <div class="feedback-primary-action">
+                <button type="submit" class="feedback-action-submit feedback-primary-button">
+                    <span>Submit Feedback</span>
+                </button>
+            </div>
+        </div>
+
+    </form>
+</div>
