@@ -2,16 +2,16 @@
     "name": "developersalliance/customer-feedback",
     "description": "Customer Feedback extension for Magento 2 that allows customers to submit feedback on product pages.",
     "type": "magento2-module",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "license": [
         "MIT"
     ],
     "require": {
         "php": "^7.2 || ^8.0",
-        "magento/framework": "+103.0",
-        "magento/module-catalog": "+103.0",
-        "magento/module-ui": "+101.1",
-        "magento/module-backend": "+101.0",
+        "magento/framework": ">103.0",
+        "magento/module-catalog": ">103.0",
+        "magento/module-ui": ">101.1",
+        "magento/module-backend": ">101.0",
         "developersalliance/module-base": "*"
     },
     "autoload": {
